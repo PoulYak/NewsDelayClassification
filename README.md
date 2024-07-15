@@ -27,7 +27,7 @@ This project uses a custom BERT model to classify news.
    pip install -r requirements.txt
    ```
 3. Run the project:
-   Follow instructions in `notebooks/training.ipynb` to train the model or look at `infer.py`.
+   Follow instructions in `infer.py`. to train the model or look at `inference.py`.
 
 ## Описание задачи
 

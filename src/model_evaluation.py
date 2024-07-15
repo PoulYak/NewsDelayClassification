@@ -134,7 +134,6 @@ class NewsSomeDetector:
     def predict(self):
         outputs = self.outputs
         news_outputs = np.zeros(len(self.news_df))
-        print(news_outputs.shape)
 
         for i in range(len(outputs)):
             news_idx = self.sentence2news[i]

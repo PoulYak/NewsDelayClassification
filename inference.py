@@ -42,14 +42,11 @@ def preprocess():
                                                  batch_size=VALID_BATCH_SIZE, shuffle=False, num_workers=0,
                                                  stemmer=stemmer, max_len=MAX_LEN)
 
-    test_set, test_loader = get_test_dataset_dataloader(test_df, tokenizer,
-                                                        batch_size=VALID_BATCH_SIZE, shuffle=False, num_workers=0,
-                                                        stemmer=stemmer, max_len=MAX_LEN)
-    return training_loader, val_loader, test_loader
+    return training_loader, val_loader
 
 
 def train():
-    training_loader, val_loader, test_loader = preprocess()
+    training_loader, val_loader = preprocess()
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = NewsClassification(BERT_MODEL_NAME)
@@ -83,3 +80,4 @@ def inference():
 
 if __name__ == "__main__":
     inference()
+    # train() -- to fit model
